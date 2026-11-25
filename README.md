@@ -10,6 +10,8 @@ AI agents that run under enforced rules and answer from a knowledge base that sh
 
 I created a bunch of AI agents over the years. I wanted one place to see what they were all doing and to monitor token use. I also wanted to give the system as much knowledge as possible, with a visual of everything it holds in context. So I built Manez: a console with an agent and task view, per-task token and cost tracking, and a 3D graph of the knowledge base.
 
+Manez also takes voice. Speech-to-text and speech run on the laptop, with a lip-synced 3D avatar and a local Qwen3-4B that answers by default. Factual questions go to the knowledge base. Code, long writing or an explicit request go through the hub to Claude (Haiku, Sonnet or Opus) under its spend cap, and Opus runs only when I ask for it. Optional pieces: a wake-word model for "Manez" trained on synthetic voices (not yet tested on my own), a voice cloned from my own recording, animated status orbs, and a phone app over a Cloudflare tunnel (tested through a quick tunnel, not yet on a real phone).
+
 The idea behind it has three parts. Agents run under rules (tool allow-lists, spend caps, usage-limit holds). Answers come from cited knowledge. Results are measured, and I report the fixes that didn't work.
 
 ## Headline results
@@ -54,7 +56,7 @@ Agents reach everything through the hub, so a tool or a dollar passes one checkp
 
 ## Not published
 
-The console and the voice assistant themselves are not published. The console is the agent and task view, the token and cost tracking, and the 3D knowledge graph. They are built around my personal setup. The four repos above are the infrastructure underneath, extracted so you can use it on its own. The demo video at the top shows the console.
+The console and the voice assistant themselves are not published. The console is the agent and task view, the token and cost tracking, and the 3D knowledge graph. The voice assistant is the avatar, the speech loop and the phone app. They are built around my personal setup. The four repos above are the infrastructure underneath, extracted so you can use it on its own. The demo video at the top shows the console.
 
 ## Limits
 
